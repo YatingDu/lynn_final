@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant
+</h1>
+	<p>Tasty Treats To Your Door” in
+smaller font</p>
+
+	<h2>Here are all our items!</h2>
+
+	<!-- Item 1 -->
+	<p>Yu Xiang Rou Si: 22RMB</p>
+	<img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D26%2C0%2C970%2C640%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=929a9fa22a3fb80e189e3b970be31902/d6ca7bcb0a46f21f2d7acdc0fd246b600d33aed3.jpg">
+	<br>
+
+	<!-- Item 2 -->
+	<p>Hong Shao Rou: 48MB</p>
+	<img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=d62fbd7bc75c10383073c690d378f876/cc11728b4710b912f7834b9fc2fdfc0392452214.jpg">
+
+	<!-- Item 3 -->
+	<p>Pai Gu: 78RMB</p>
+	<img src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=17ffbd7bc75c10383073c690d378f876/9a504fc2d56285351b726f4091ef76c6a6ef63c5.jpg">
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'order:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="item" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Item Ordered: {{item}}</p>
+	<p>Delivery Address: {{address}}</p>
+
+</body>
+</html>s
